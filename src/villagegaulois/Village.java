@@ -90,10 +90,7 @@ public class Village {
 		StringBuilder text = new StringBuilder();
 		try {
 			Etal etal = marche.trouverVendeur(vendeur);
-			etal.libererEtal();
-			text.append("Le vendeur " + etal.getVendeur().getNom() + " quitte son etal, il a vendu "
-					+ (etal.getQuantiteDebutMarche() - etal.getQuantite()) + " " + etal.getProduit() + " sur les "
-					+ etal.getQuantiteDebutMarche() + " qu'il voulait vendre\n");
+			text.append(etal.libererEtal());
 
 		} catch (IllegalStateException e) {
 			text.append(e.getMessage());
